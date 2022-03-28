@@ -1,0 +1,41 @@
+﻿@using Student_Management_System.Models
+@model Staff
+
+@{
+
+    ViewData["Title"] = "Staff Details";
+    var s = ViewData["Staff"] as List<Staff>;
+
+}
+
+<h1>Staff Details</h1>
+<h2>@ViewData["No"]</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th><label asp-for="StaffId"></label></th>
+            <th><label asp-for="DepartmentId"></label></th>
+            <th><label asp-for="FirstName"></label></th>
+            <th><label asp-for="LastName"></label></th>
+            <th><label asp-for="Email"></label></th>
+            <th><label>Remove</label></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in s)
+        {
+            <tr>
+                <td>@item.StaffId</td>
+                <td>@item.DepartmentId</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td><a asp-action="Contact">Delete</a> / <a asp-action="Contact">Edit</a></td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

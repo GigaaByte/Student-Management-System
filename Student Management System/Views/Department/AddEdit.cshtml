@@ -1,0 +1,28 @@
+﻿@model Student_Management_System.Models.Department
+
+@{
+    ViewData["Title"] = "AddEdit Department";
+}
+
+<h1>AddEdit Department</h1>
+<h2>@ViewBag.Page</h2>
+
+<form asp-action="AddEdit" asp-controller="Department" method="post">
+
+    <table border="1" >
+        <tr>
+            <td><label asp-for="DepartmentId"></label></td>
+            <td><input type="number" asp-for="DepartmentId" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="DepartmentName"></label></td>
+            <td><input type="text" asp-for="DepartmentName" class="form-control" /></td>
+        </tr>
+
+    </table>
+
+    <br />
+
+    <input type="submit" value="Insert" class="btn btn-primary" />
+
+</form>

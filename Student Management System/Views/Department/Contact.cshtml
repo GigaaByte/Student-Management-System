@@ -1,0 +1,28 @@
+﻿@using Student_Management_System.Models
+@model Department
+@{
+    ViewData["Title"] = "Departments";
+    var d = (List<Department>)ViewData["Department"];
+}
+
+<h1>Departments</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th><label asp-for="DepartmentId"></label></th>
+            <th><label asp-for="DepartmentName"></label></th>
+            <th><label>Remove</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in d)
+        {
+            <tr>
+                <td>@item.DepartmentId</td>
+                <td>@item.DepartmentName</td>
+                <td><a asp-action="Contact">Delete</a> / <a asp-action="Contact">Edit</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
